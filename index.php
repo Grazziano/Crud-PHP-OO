@@ -53,7 +53,10 @@ $manager = new Manager();
 							<td><?php echo $client['address']; ?></td>
 							<td><?php echo $client['phone']; ?></td>
 							<td>
-								<form method="POST">
+								<form method="POST" action="view/page_update.php">
+
+									<input type="hidden" name="id" value="<?= $client['id'] ?>">
+
 									<button class="btn btn-warning btn-xs">
 										<i class="fa fa-user-edit"></i>
 									</button>

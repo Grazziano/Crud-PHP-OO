@@ -24,4 +24,13 @@ class Manager extends Conexao
 		$statement->execute();
 		return $statement->fetchAll();
 	}
+
+	public function deleteClient($table, $id)
+	{
+		$pdo = parent::get_instance();
+		$sql = "DELETE FROM $table WHERE id = :id";
+		$statement = $pdo->prepare($sql);
+		$statement->bindValue(":id", $id);
+		$statement->execute();
+	}
 }
